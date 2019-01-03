@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<link rel="stylesheet" type="text/css" href="dabbbingdropdown.css">
+	<link rel="stylesheet" type="text/css" href="NavBar.css">
+	<meta charset="utf-8">
+	<title>Rock, Paper, Scissors Game</title>
+	<link rel="stylesheet" type="text/css" href="Yoshi.css">
+   <script>
+		function show_date() {
+					document.getElementById("loadtime").innerHTML = Date();
+		} //end show_date
+
+		function PlayGame()	{
+				var answer = confirm("Press OK if you are sure you want to play.");
+			  if (answer) {
+				//setup variables
+					var psPlayer ="";
+					var datagood = false;
+						var intComputer =0;
+						var psComputer ="";
+
+				//get choice from computer
+				intComputer = parseInt(Math.random() * (3-1)+1);
+				switch (intComputer){
+					case 1:
+					psComputer = "Rock"
+					break;
+					case 2:
+					psComputer = "Paper"
+					break;
+					case 3:
+					psComputer = "Scissors"
+
+
+
+				} //end switch
+				//Get choice from player
+				while (datagood === false) {
+					psPlayer = prompt("Do you chose Rock, Paper or Scissors?");
+					switch(psPlayer){
+						case "Rock":
+							datagood=true;
+							break;
+						case "Paper":
+							datagood=true;
+							break;
+						case "Scissors":
+							datagood=true;
+							break;
+						default :
+							alert("Error: You must chose Rock, Paper, Scissors");
+					} //end switch
+				} //end while
+
+
+
+				//determine winner
+				if (psPlayer === psComputer) {
+					alert("Result: Tie, The computer also picked" + psPlayer);
+				} //tie
+				else if ((psPlayer === "Rock")&&(psComputer === "Scissors")){
+					alert("Result: Rock smashes Scissors!");
+				} //Rock over Scissors
+				else if ((psPlayer === "Scissors")&&(psComputer === "Paper")){
+					alert("Result: Scissors cuts paper, you win!");
+				}
+					else if ((psPlayer === "Paper")&&(psComputer === "Rock")){
+					alert("Result: Paper covers your rock, you win!");
+				}
+				else {
+					alert("Result: You Lose! The computer picked" + psComputer);
+				} //computer wins
+
+
+			 } //end of if answer
+		}//end PlayGame
+</script>
+	</head>
+<body onload="show_date()">
+	<div id="container">
+		<header>
+			<nav>
+<li><a href="index.html">Home</a></li>S
+						<li><a href="Page2.html">Backer Store</a></li>
+						<li><a href="page3.html">IDK</a></li>
+						<li><a href="page4.html">You verse Rock Paper and Scissors</a></li>
+						<li><a href="BOI.html">tables (:</a></li>
+			</nav>
+			<audio id="boi" preload="auto" autoplay hidden>
+			     <source src="comft.mp3" type="audio/mpeg">
+			</audio>
+	<div class="dropdown">
+	  <button class="dropbtn">Hi Down</button>
+	  <div class="dropdown-content">
+	  <a href="https://www.youtube.com/">utube</a>
+	  <a href="https://www.twitch.tv/">Twutch</a>
+	  <a href="https://www.google.com/search?q=dab&rlz=1C1GCEU_enUS827&oq=dab&aqs=chrome..69i57j0l5.4862j0j4&sourceid=chrome&ie=UTF-8">dab</a>
+		<a href="https://www.youtube.com/watch?v=zZ79DxA-aWw">bruh</a>
+	</div>
+			<p><p class="sansserif"><font color="#0066ff" size="9"><center>Pretty gud programmmer</center></p>
+		</header>
+		<main>
+			<img class="circleMe" src="lololzxzx.png" alt="Image of me" width="150" height="150">
+			<h2>My games:</h2>
+
+			<img onclick="PlayGame()" src="RockPaperScissors.png" alt="Rock Paper Scissors logo" width="100" height="100">
+
+		</main>
+		<footer>
+			<p style="font-size:1.5em; text-align:center;">
+			This page loaded at: <span id="loadtime"></span> </p>
+			<br>
+			<br>
+		</footer>
+	</div> <!--container-->
+</body>
+</html>
